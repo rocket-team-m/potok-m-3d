@@ -24,4 +24,4 @@ Native `.SLDPRT`/`.SLDASM` не являются рабочим форматом
 
 [potok-m] · [potok-m-sim] · [potok-m-workbench] · [potok-m-firmware]
 
-Лицензия: MIT.
+Лицензия: GPL-3.0-or-later (или коммерческая).
