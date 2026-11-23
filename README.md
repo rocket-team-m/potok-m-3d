@@ -2,19 +2,17 @@
 
 # potok-m-3d
 
-Исходники 3D- и CAD-модели ракеты «Поток-М»: геометрия, массы, STEP/STL, входные данные для аэродинамики.
+Текстовые входы для 3D/CAD-модели ракеты «Поток-М»: геометрия, массы, требования к экспорту. Сама геометрия в git не лежит.
 
 ## Что здесь
 
-- `vehicle/` — ТТХ, параметры модели, требования к экспорту, заметки по аэротрубе.
-- `releases` — тяжёлые STEP/STL и сборки; в git попадают только текстовые файлы.
-- `Makefile` / скрипты — проверки габаритов, пересчёт площади миделя, экспорт STL.
+- `DESIGN_INPUT.md` — минимальный набор входных данных для расчёта конструкции.
+- `AEROTUBE.md` — рабочая гипотеза по аэротрубе, не обязательный этап.
+- `cad/`, `aero/` — каталоги под локальные модели и аэроданные; в git только `.gitkeep`.
 
-Native `.SLDPRT`/`.SLDASM` не являются рабочим форматом обмена. Канонический вход для симуляции и CFD — STEP AP214 и STL в миллиметрах плюс mass properties из SolidWorks.
+## Геометрия и статус
 
-## Статус
-
-Есть архаичные нативные модели и ранние STEP-экспорты деталей; геометрия требует сверки с актуальными ТТХ. До подтверждения габаритов STEP используется как исходная форма для параметрического пересчёта, а не как истина.
+Нативные `.SLDPRT`/`.SLDASM` в git не попадают: проприетарный формат, исходники хранятся вне репозитория. Канонический формат обмена для симуляции и CFD — STEP AP214/AP203 и binary STL в миллиметрах плюс массовые характеристики из SolidWorks. Тяжёлые STEP/STL и сборки публикуются в [Releases](https://github.com/rocket-team-m/potok-m-3d/releases), а не в git; на текущий момент релизов нет, поэтому в репозитории доступны только текстовые входы. Имеющаяся геометрия требует сверки с актуальными ТТХ: STEP используется как исходная форма для параметрического пересчёта, а не как истина.
 
 ## Аэродинамика
 
@@ -22,6 +20,10 @@ Native `.SLDPRT`/`.SLDASM` не являются рабочим форматом
 
 ## Репозитории
 
-[potok-m] · [potok-m-sim] · [potok-m-workbench] · [potok-m-firmware]
+**Публичные (8):** [.github](https://github.com/rocket-team-m/.github) · [potok-m](https://github.com/rocket-team-m/potok-m) · [potok-m-ai](https://github.com/rocket-team-m/potok-m-ai) · [potok-m-sim](https://github.com/rocket-team-m/potok-m-sim) · [potok-m-protocol](https://github.com/rocket-team-m/potok-m-protocol) · [potok-m-firmware](https://github.com/rocket-team-m/potok-m-firmware) · [potok-m-edge](https://github.com/rocket-team-m/potok-m-edge) · [potok-m-3d](https://github.com/rocket-team-m/potok-m-3d)
 
-Лицензия: GPL-3.0-or-later (или коммерческая).
+**Приватный:** RocketCraft (`potok-m-workbench`) — CAD/CFD/FEA/GUI.
+
+## Лицензия
+
+Собственный код: GPL-3.0-or-later; коммерческая лицензия доступна отдельно (`LICENSE-COMMERCIAL.md`). Third-party компоненты сохраняют свои лицензии.
